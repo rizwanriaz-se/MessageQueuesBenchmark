@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MessageQueuesBenchmark", "MessageQueuesBenchmark\MessageQueuesBenchmark.vcxproj", "{A94C0AC5-C21D-4691-AE22-B6FE22A8EDC8}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NatsDriver", "NatsDriver\NatsDriver.vcxproj", "{DC038A5B-ECA3-4BD9-A766-835F8A16A7F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{A94C0AC5-C21D-4691-AE22-B6FE22A8EDC8}.Release|x64.Build.0 = Release|x64
 		{A94C0AC5-C21D-4691-AE22-B6FE22A8EDC8}.Release|x86.ActiveCfg = Release|Win32
 		{A94C0AC5-C21D-4691-AE22-B6FE22A8EDC8}.Release|x86.Build.0 = Release|Win32
+		{DC038A5B-ECA3-4BD9-A766-835F8A16A7F3}.Debug|x64.ActiveCfg = Debug|x64
+		{DC038A5B-ECA3-4BD9-A766-835F8A16A7F3}.Debug|x64.Build.0 = Debug|x64
+		{DC038A5B-ECA3-4BD9-A766-835F8A16A7F3}.Debug|x86.ActiveCfg = Debug|Win32
+		{DC038A5B-ECA3-4BD9-A766-835F8A16A7F3}.Debug|x86.Build.0 = Debug|Win32
+		{DC038A5B-ECA3-4BD9-A766-835F8A16A7F3}.Release|x64.ActiveCfg = Release|x64
+		{DC038A5B-ECA3-4BD9-A766-835F8A16A7F3}.Release|x64.Build.0 = Release|x64
+		{DC038A5B-ECA3-4BD9-A766-835F8A16A7F3}.Release|x86.ActiveCfg = Release|Win32
+		{DC038A5B-ECA3-4BD9-A766-835F8A16A7F3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
