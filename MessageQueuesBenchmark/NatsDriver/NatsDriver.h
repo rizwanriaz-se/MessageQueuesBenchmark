@@ -10,10 +10,11 @@ class NatsDriver {
 private:
 	natsConnection* nc = nullptr;
 	natsSubscription* sub = nullptr;
+	jsCtx* js = nullptr;
 
 public:
-	void connect(const std::string& connectionString);
-	void send(const std::vector<uint8_t>& payload);
-	void receive(std::vector<uint8_t> outPayload);
+	void connect(const std::string& url);
+	void send(const std::string& payload);
+	void receive(std::string& outPayload, std::string mode);
 };
 

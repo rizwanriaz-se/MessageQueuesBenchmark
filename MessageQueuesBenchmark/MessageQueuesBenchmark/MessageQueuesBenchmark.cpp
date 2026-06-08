@@ -6,7 +6,17 @@
 
 int main()
 {
-    
+	NatsDriver driver;
+	driver.connect("nats://localhost:4222");
+
+	std::string payload = "Hello, NATS!";
+	driver.send(payload);
+
+	std::string receivedPayload;
+	driver.receive(receivedPayload, "PUSH");
+	std::cout << "Received Payload: " << receivedPayload << std::endl;
+
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

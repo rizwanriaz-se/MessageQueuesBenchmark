@@ -129,7 +129,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\Abbas Diat\OneDrive\Desktop\QueueUtilities\cnats_x64-windows\cnats_x64-windows\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\MessageQueuesBenchmark\MessageQueuesBenchmark\NatsDriver;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -139,7 +139,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>C:\Users\Abbas Diat\OneDrive\Desktop\QueueUtilities\cnats_x64-windows\cnats_x64-windows\lib\nats.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>C:\Users\rizwan.riaz\Downloads\cnats_x64-windows\cnats_x64-windows\lib\nats.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
