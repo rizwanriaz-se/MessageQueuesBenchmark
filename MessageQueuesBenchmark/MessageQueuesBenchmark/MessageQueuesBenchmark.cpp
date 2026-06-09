@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "NatsDriver.h"
+#include "spmc_queue.h"
 
 int main()
 {
@@ -10,11 +11,35 @@ int main()
 	driver.connect("nats://localhost:4222");
 
 	std::string payload = "Hello, NATS!";
-	driver.send(payload);
+	for (int i = 0; i < 100; ++i) {
+		payload = "Hello, NATS!";
+		payload += payload +" " + std::to_string(i);
+		driver.send(payload);
+	}
+
 
 	std::string receivedPayload;
-	driver.receive(receivedPayload, "PUSH");
-	std::cout << "Received Payload: " << receivedPayload << std::endl;
+
+	for (int i = 0; i < 5; ++i) {
+		driver.receive(receivedPayload, "PUSH");
+	}
+
+
+	SpmcQueue queue(10);
+	queue.enqueue(receivedPayload);
+
+	// worker threads will dequeue spmc queue
+	for (int i = 0; i < 5; ++i) {
+		std::string item;
+		while (true) {
+			if (queue.dequeue(item)) {
+				// Process the item
+				std::cout << "Processed Item: " << item << std::endl;
+			}
+		}
+	}
+
+	//std::cout << "Received Payload: " << receivedPayload << std::endl;
 
 	return 0;
 }

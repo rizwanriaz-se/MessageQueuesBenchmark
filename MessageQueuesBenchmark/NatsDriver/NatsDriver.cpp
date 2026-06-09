@@ -50,7 +50,7 @@ void NatsDriver::receive(std::string& outPayload, std::string mode)
     if (sub == NULL) {
         // Fix: Pass your active 'js' class context instead of a local NULL pointer.
         // We bind to "benchmark.topic" to listen to the producer's data stream.
-        status = js_SubscribeSync(&sub, js, "benchmark.topic", NULL, NULL, NULL);
+		status = js_SubscribeSync(&sub, js, "benchmark.topic", NULL, NULL, NULL); // it is for push, use js_PullSubscribeSync for pull 
         if (status != NATS_OK) {
             throw std::runtime_error("NATS Subscribe Failed!");
         }
@@ -59,7 +59,7 @@ void NatsDriver::receive(std::string& outPayload, std::string mode)
     // FIX: Distinguish between configurations using the unified Enum path
     if (mode == "PULL") {
         // Pull mode: Explicitly fetch a message block
-        status = natsSubscription_Fetch(msgList, sub, 1, 1000, NULL); // Fetch 1 message with a 1000ms timeout
+        status = natsSubscription_Fetch(msgList, sub, 10, 1000, NULL); // Fetch 1 message with a 1000ms timeout
     }
     else {
         // Push mode: Pull the next streaming frame already cached in local memory

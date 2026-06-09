@@ -132,11 +132,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MessageQueuesBenchmark.cpp" />
+    <ClCompile Include="spmc_queue.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NatsDriver\NatsDriver.vcxproj">
       <Project>{dc038a5b-eca3-4bd9-a766-835f8a16a7f3}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="spmc_queue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
